@@ -3,7 +3,6 @@ package com.hans.spring_menu_excercise;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Configuration;
 
 import configurationsPackages.ConfigurationDrink;
 import configurationsPackages.ConfigurationFamilySizePizza;
@@ -44,6 +43,7 @@ public class SpringMenuExcerciseApplication {
 		FamilySizePizza fsp= (FamilySizePizza) appContextFamilySizePizza.getBean("MenuFamilySizePizza");
 		System.out.println(fsp);
 		System.out.println();
+		appContextFamilySizePizza.close();
 		
 		AnnotationConfigApplicationContext appContextToppings = new AnnotationConfigApplicationContext(ConfigurationToppings.class);
 		System.out.println("Toppings - Calories - Price");

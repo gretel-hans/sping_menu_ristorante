@@ -1,6 +1,5 @@
 package gestione_menu;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,6 +26,7 @@ public class FamilySizePizza {
 		}else if(this.pizza!=null) {
 			return "Family Size for Pizza: "+this.pizza.getNomePizza()+", calorie:"+this.pizza.getCalorie()+", prezzo:"+this.pizza.getPrezzo();
 		}
+		return null;
 	}
 	
 }
