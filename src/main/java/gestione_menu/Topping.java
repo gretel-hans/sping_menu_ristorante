@@ -15,7 +15,7 @@ import lombok.ToString;
 public class Topping {
 
 	private ToppingsEnum topping;
-	private long calorie;
+	private double calorie;
 	private double prezzo;
 	@Override
 	public String toString() {

@@ -15,7 +15,7 @@ public class Drink {
 	
 	private DrinksEnum drink;
 	private double capacity;
-	private long calorie;
+	private double calorie;
 	private double prezzo;
 	
 	

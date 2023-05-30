@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Configuration;
 
 import configurationsPackages.ConfigurationDrink;
+import configurationsPackages.ConfigurationFamilySizePizza;
 import configurationsPackages.ConfigurationFranchise;
 import configurationsPackages.ConfigurationPizza;
 import configurationsPackages.ConfigurationToppings;
@@ -14,6 +15,7 @@ import enums.FranchiseEnum;
 import enums.PizzasEnum;
 import enums.ToppingsEnum;
 import gestione_menu.Drink;
+import gestione_menu.FamilySizePizza;
 import gestione_menu.Franchise;
 import gestione_menu.Pizza;
 import gestione_menu.Topping;
@@ -29,6 +31,7 @@ public class SpringMenuExcerciseApplication {
 	public static void compilaMenu() {
 		AnnotationConfigApplicationContext appContextPizza = new AnnotationConfigApplicationContext(ConfigurationPizza.class);
 		System.out.println();
+		System.out.println("------- MENU --------");
 		System.out.println("Pizzas - Calories - Price");
 		Pizza p1 =(Pizza) appContextPizza.getBean("pizzaMenu",PizzasEnum.Margherita,1104,4.99);
 		System.out.println(p1.toString());
@@ -36,8 +39,11 @@ public class SpringMenuExcerciseApplication {
 		System.out.println(p2.toString());
 		Pizza p3 =(Pizza) appContextPizza.getBean("pizzaMenu",PizzasEnum.Salami,1160,5.99);
 		System.out.println(p3.toString());
-		System.out.println();
 		appContextPizza.close();
+		AnnotationConfigApplicationContext appContextFamilySizePizza = new AnnotationConfigApplicationContext(ConfigurationFamilySizePizza.class);
+		FamilySizePizza fsp= (FamilySizePizza) appContextFamilySizePizza.getBean("MenuFamilySizePizza");
+		System.out.println(fsp);
+		System.out.println();
 		
 		AnnotationConfigApplicationContext appContextToppings = new AnnotationConfigApplicationContext(ConfigurationToppings.class);
 		System.out.println("Toppings - Calories - Price");
@@ -72,6 +78,7 @@ public class SpringMenuExcerciseApplication {
 		Franchise f2= (Franchise) appContextFranchise.getBean("franchise",FranchiseEnum.Mug,4.99);
 		System.out.println(f2.toString());
 		appContextFranchise.close();
+		
 		
 	}
 }

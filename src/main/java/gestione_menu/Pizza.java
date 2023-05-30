@@ -16,7 +16,7 @@ import lombok.ToString;
 public class Pizza {
 	
 	private PizzasEnum nomePizza;
-	private long calorie;
+	private double calorie;
 	private double prezzo;
 	@Override
 	
