@@ -4,15 +4,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import enums.PizzasEnum;
-import gestione_menu.Pizza;
+import enums.StatoTavolo;
+import gestioneOrdiniETavoli.Tavolo;
 
 @Configuration
-public class ConfigurationPizza {
+public class ConfigurationTavolo {
 
 	@Bean
 	@Scope("prototype")
-	public Pizza pizzaMenu(PizzasEnum pizza,long calorie, double prezzo) {
-		return new Pizza(pizza, calorie, prezzo);
-	} 
+	
+	public Tavolo nuovoTavolo(int numeroCopertiMassimo, StatoTavolo stato) {
+		return new Tavolo(numeroCopertiMassimo, stato);
+	}
 }

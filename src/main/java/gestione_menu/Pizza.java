@@ -1,35 +1,52 @@
 package gestione_menu;
 
-import enums.PizzasEnum;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 
 public class Pizza {
 	
-	private PizzasEnum nomePizza;
+	private String nomePizza;
+	private Topping[] toppings;
 	private double calorie;
 	private double prezzo;
-	@Override
 	
-	public String toString() {
-		if(this.nomePizza==PizzasEnum.Margherita) {
-			return "Pizza Margherita (tomato, cheese), calorie=" + calorie + ", prezzo=" + prezzo;
-		}else if(this.nomePizza==PizzasEnum.Hawaiian) {
-			return "Hawaiin Pizza (tomato, cheese, ham, pineapple), calorie=" + calorie + ", prezzo=" + prezzo;
-		}else if(this.nomePizza==PizzasEnum.Salami) {
-			return "Salami Pizza (tomato, cheese, salami), calorie=" + calorie + ", prezzo=" + prezzo;
-		}
-		return null;
+	
+	public Pizza(String nomePizza, Topping[] toppings) {
+		this.nomePizza = nomePizza;
+		this.toppings = toppings;
+		this.calorie=1104;
+		this.prezzo=4.99;
+	}
+	
+	public Pizza(String nomePizza, Topping[] toppings, double calorie, double prezzo) {
+		this.nomePizza = nomePizza;
+		this.toppings = toppings;
+		this.calorie=calorie;
+		this.prezzo=prezzo;
 	}
 	
 	
+	
+	@Override
+	public String toString() {
+		String ingredienti="";
+		for(int i=0;i<toppings.length;i++) {
+			if(i==toppings.length-1) {
+				ingredienti+=toppings[i].getToppingName();
+			}else {
+				ingredienti+=toppings[i].getToppingName()+", ";				
+			}
+			this.calorie+=toppings[i].getCalorie();
+			this.prezzo+=toppings[i].getPrezzo();
+		}
+			return "Pizza " +nomePizza+ " ("+ingredienti+"), calorie=" + calorie + ", prezzo=" + prezzo;
+		
+	}
 	
 	
 }

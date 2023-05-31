@@ -12,12 +12,12 @@ import lombok.Setter;
 @Setter
 public class Topping {
 
-	private ToppingsEnum topping;
+	private String toppingName;
 	private double calorie;
 	private double prezzo;
 	@Override
 	public String toString() {
-		return topping + ", calorie=" + calorie + ", prezzo=" + prezzo;
+		return toppingName + ", calorie=" + calorie + ", prezzo=" + prezzo;
 	}
 	
 	

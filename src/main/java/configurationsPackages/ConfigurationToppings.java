@@ -5,14 +5,46 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import enums.ToppingsEnum;
+import gestione_menu.Cheese;
+import gestione_menu.Ham;
+import gestione_menu.Onions;
+import gestione_menu.Pineapple;
+import gestione_menu.Salami;
+import gestione_menu.Tomato;
 import gestione_menu.Topping;
 
 @Configuration
 public class ConfigurationToppings {
 
 	@Bean
-	@Scope("prototype")
-	public Topping topping(ToppingsEnum topping, long calorie, double prezzo) {
-		return new Topping(topping, calorie, prezzo);
+	public Cheese cheeseTopping() {
+		return new Cheese();
 	}
+	
+	@Bean
+	public Tomato tomatoTopping() {
+		return new Tomato();
+	}
+	
+	@Bean
+	public Ham hamTopping() {
+		return new Ham();
+	}
+	
+	@Bean
+	public Onions onionsTopping() {
+		return new Onions();
+	}
+	
+	@Bean
+	public Pineapple pineappleTopping() {
+		return new Pineapple();
+	}
+	
+	@Bean
+	public Salami salamiTopping() {
+		return new Salami();
+	}
+	
+	
 }
