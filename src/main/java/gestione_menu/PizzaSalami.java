@@ -16,12 +16,15 @@ public class PizzaSalami extends Pizza{
 	private static Topping[] toppings= {new Cheese(),new Tomato(),new Salami()};
 	private static double calorie=1160;
 	private static double prezzo=5.99;
+	private String notaPizza;
+	
+	public PizzaSalami(String notaPizza) {
+		super(nomePizza, toppings, calorie, prezzo, notaPizza);
+	}
 	
 	public PizzaSalami() {
 		super(nomePizza, toppings, calorie, prezzo);
 	}
-	
-	
 	
 	
 	

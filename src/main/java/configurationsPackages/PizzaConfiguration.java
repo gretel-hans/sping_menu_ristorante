@@ -20,8 +20,20 @@ public class PizzaConfiguration {
 	}
 	
 	@Bean
+	@Scope("prototype")
+	public PizzaMargherita pizzaMargheritaConNota(String nota) {
+		return new PizzaMargherita(nota);
+	}
+	
+	@Bean
 	public PizzaHawaiian pizzaHawaiian() {
 		return new PizzaHawaiian();
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public PizzaHawaiian pizzaHawaiianConNota(String nota) {
+		return new PizzaHawaiian(nota);
 	}
 	
 	@Bean
@@ -31,7 +43,19 @@ public class PizzaConfiguration {
 	
 	@Bean
 	@Scope("prototype")
+	public PizzaSalami pizzaSalamiConNota(String nota) {
+		return new PizzaSalami(nota);
+	}
+	
+	@Bean
+	@Scope("prototype")
 	public Pizza pizzaSpeciale(String pizza, Topping[] toppings) {
 		return new Pizza(pizza,toppings);
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public Pizza pizzaSpecialeConNota(String pizza, Topping[] toppings, String nota) {
+		return new Pizza(pizza,toppings,nota);
 	}
 }

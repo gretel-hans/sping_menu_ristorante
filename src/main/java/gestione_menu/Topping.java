@@ -1,6 +1,5 @@
 package gestione_menu;
 
-import enums.ToppingsEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

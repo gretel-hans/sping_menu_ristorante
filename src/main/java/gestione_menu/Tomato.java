@@ -4,9 +4,11 @@ import org.springframework.context.annotation.Configuration;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Configuration
 @Getter
+
 public class Tomato extends Topping{
 	
 	private static String toppingName="Tomato";

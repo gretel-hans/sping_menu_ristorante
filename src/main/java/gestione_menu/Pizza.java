@@ -14,6 +14,7 @@ public class Pizza {
 	private Topping[] toppings;
 	private double calorie;
 	private double prezzo;
+	private String notaPizza;
 	
 	
 	public Pizza(String nomePizza, Topping[] toppings) {
@@ -23,11 +24,27 @@ public class Pizza {
 		this.prezzo=4.99;
 	}
 	
+	public Pizza(String nomePizza, Topping[] toppings,String notaPizza) {
+		this.nomePizza = nomePizza;
+		this.toppings = toppings;
+		this.calorie=1104;
+		this.prezzo=4.99;
+		this.notaPizza=notaPizza;
+	}
+	
 	public Pizza(String nomePizza, Topping[] toppings, double calorie, double prezzo) {
 		this.nomePizza = nomePizza;
 		this.toppings = toppings;
 		this.calorie=calorie;
 		this.prezzo=prezzo;
+	}
+	
+	public Pizza(String nomePizza, Topping[] toppings, double calorie, double prezzo, String notaPizza) {
+		this.nomePizza = nomePizza;
+		this.toppings = toppings;
+		this.calorie=calorie;
+		this.prezzo=prezzo;
+		this.notaPizza=notaPizza;
 	}
 	
 	

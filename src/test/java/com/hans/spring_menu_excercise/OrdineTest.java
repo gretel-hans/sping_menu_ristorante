@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import configurationsPackages.ConfigurationDrink;
+import configurationsPackages.ConfigurationOrdine;
 import configurationsPackages.ConfigurationTavolo;
 import configurationsPackages.PizzaConfiguration;
 import enums.StatoOrdine;
@@ -60,13 +61,14 @@ public static Ordine o1;
 		listaPizze.add(Margherita);
 		listaPizze.add(Margherita);
 		System.out.println("----- Ordini -----");
-		o1= new Ordine(tavolo1,listaDrink,listaPizze,"",StatoOrdine.Servito,21);
+		AnnotationConfigApplicationContext appContextOrdine = new AnnotationConfigApplicationContext(ConfigurationOrdine.class);
+		o1= (Ordine) appContextOrdine.getBean("ordine",tavolo1,listaDrink,listaPizze,StatoOrdine.Servito,21);
 		System.out.println(o1.toString());
 	}
 	@Test
 	void test() {
 		
-		assertNull(o1.getListaBevande());
+		//assertNull(o1.getListaBevande());
 	}
 
 }

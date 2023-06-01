@@ -30,5 +30,7 @@ public class Tavolo {
 		return "Tavolo [Numero tavolo: "+this.numeroTavolo+", numero coperti massimo=" + numeroCopertiMassimo + ", stato=" + stato + "]";
 	}
 	
-	
+	public int getNumeroTavolo() {
+		return this.numeroTavolo;
+	}
 }

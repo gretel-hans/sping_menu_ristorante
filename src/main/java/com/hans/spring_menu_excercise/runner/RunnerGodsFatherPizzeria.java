@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import configurationsPackages.ConfigurationDrink;
 import configurationsPackages.ConfigurationFamilySizePizza;
 import configurationsPackages.ConfigurationFranchise;
+import configurationsPackages.ConfigurationOrdine;
 import configurationsPackages.ConfigurationTavolo;
 import configurationsPackages.ConfigurationToppings;
 import configurationsPackages.PizzaConfiguration;
@@ -124,9 +125,10 @@ public class RunnerGodsFatherPizzeria implements CommandLineRunner{
 		listaPizze.add(Margherita);
 		listaPizze.add(Margherita);
 		listaPizze.add(Hawaiian);
-		listaPizze.add(new Pizza("Diavola",new Topping[]{salami,cheese,tomato}));
+		//listaPizze.add(new Pizza("Diavola",new Topping[]{salami,cheese,tomato}));
 		System.out.println("----- Ordini -----");
-		Ordine o1= new Ordine(tavolo1,listaDrink,listaPizze,"",StatoOrdine.Servito,21);
+		AnnotationConfigApplicationContext appContextOrdine = new AnnotationConfigApplicationContext(ConfigurationOrdine.class);
+		Ordine o1= (Ordine) appContextOrdine.getBean("ordine",tavolo1,listaDrink,listaPizze,StatoOrdine.Servito,4);
 		System.out.println(o1.toString());
 		
 	}
